@@ -191,12 +191,12 @@ def download_archive(file, target_dir, extract=True):
     tf.keras.utils.get_file(file, source_url, cache_subdir=target_dir, extract=extract)
     os.remove(os.path.join(target_dir, file))
 
-if __name__ == '__main__':
-    scale = 4
-    downgrade = 'bicubic'
+# if __name__ == '__main__':
+#     scale = 4
+#     downgrade = 'bicubic'
 
-    div2k_train = DIV2K(scale=scale, subset='train', downgrade=downgrade)
-    div2k_valid = DIV2K(scale=scale, subset='valid', downgrade=downgrade)
+#     div2k_train = DIV2K(scale=scale, subset='train', downgrade=downgrade)
+#     div2k_valid = DIV2K(scale=scale, subset='valid', downgrade=downgrade)
 
-    train_ds = div2k_train.dataset(batch_size=16, random_transform=True)
-    valid_ds = div2k_valid.dataset(batch_size=1, random_transform=False, repeat_count=1)
+#     train_ds = div2k_train.dataset(batch_size=16, random_transform=True)
+#     valid_ds = div2k_valid.dataset(batch_size=1, random_transform=False, repeat_count=1)
